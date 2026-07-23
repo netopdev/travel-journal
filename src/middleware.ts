@@ -1,18 +1,18 @@
-// Middleware runs on the Edge before every matched request.
-// Auth.js v5 exposes `auth` as a higher-order function so we can read the
-// session from the incoming request without an extra round-trip to the DB.
-import { auth } from '@/auth'
+// Edge runtime — must NOT import anything that uses Node.js built-ins (pg, crypto, etc.).
+// Use NextAuth(authConfig) with the edge-safe config; the full auth.ts (with DrizzleAdapter)
+// only runs in Node.js API routes and server components.
+import NextAuth from 'next-auth'
+import { authConfig } from './auth.config'
 import { NextResponse } from 'next/server'
+
+const { auth } = NextAuth(authConfig)
 
 export default auth((req) => {
   const { pathname } = req.nextUrl
   const isAdminRoute = pathname.startsWith('/admin')
   const isLoginPage = pathname === '/admin/login'
-  const isAuthenticated = !!req.auth
 
-  // Unauthenticated requests to any admin page (except the login page itself)
-  // are bounced to the login page.
-  if (isAdminRoute && !isLoginPage && !isAuthenticated) {
+  if (isAdminRoute && !isLoginPage && !req.auth) {
     return NextResponse.redirect(new URL('/admin/login', req.url))
   }
 })
