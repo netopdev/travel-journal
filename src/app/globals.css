@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --paper:      #faf6ee;
+  --paper-deep: #f1ead9;
+  --ink:        #2c2620;
+  --ink-soft:   #5c5347;
+  --accent:     #c1652c;
+  --accent-deep:#8f4a1e;
+  --line:       #e3d9c4;
+  --good:       #2e7d4f;
+  --warn:       #a05e12;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  line-height: 1.2;
+}
+
+/* Navigation link hover — CSS-only, no JS required */
+.nav-link {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--accent);
+}
+.nav-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
