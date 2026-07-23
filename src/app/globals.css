@@ -59,6 +59,20 @@ h6 {
   border-radius: 3px;
 }
 
+/* Login page — input focus and button hover */
+.login-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(193, 101, 44, 0.15);
+}
+.login-btn:hover {
+  background: var(--accent-deep) !important;
+}
+.login-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
 /* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,

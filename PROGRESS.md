@@ -1,8 +1,8 @@
 # Travel Journal — Progress Tracker
 
 ## Current Status
-**Active Milestone:** 2 — Database + admin login (NEXT UP)
-**Overall progress:** 1 / 9 milestones complete — **11%**
+**Active Milestone:** 3 — Write & publish (NEXT UP)
+**Overall progress:** 2 / 9 milestones complete — **22%**
 **Phase:** Local build (Milestones 1–7)
 **Server:** Not yet set up (Milestones 8–9)
 **Domain:** Not yet provided (placeholder in use)
@@ -14,7 +14,7 @@
 | # | Title | Status | Notes |
 |---|---|---|---|
 | 1 | Foundations — scaffold, Tailwind, fonts, homepage | ✅ Complete | Finished 2026-07-23 |
-| 2 | Database + admin login | ⬜ Not started | |
+| 2 | Database + admin login | ✅ Complete | Finished 2026-07-23 |
 | 3 | Write & publish | ⬜ Not started | |
 | 4 | Read (public post page) | ⬜ Not started | |
 | 5 | The map | ⬜ Not started | |
@@ -27,16 +27,16 @@
 
 ## Where We Stand
 - Milestone 1 complete: Next.js 15 scaffold, Tailwind v4, Fraunces + Inter fonts, all 9 design tokens, homepage skeleton
+- Milestone 2 complete: Drizzle ORM schema (6 tables), Auth.js v5 magic-link login, admin middleware, login page, admin dashboard skeleton
 - Code is on GitHub at `github.com/netopdev/travel-journal` (main branch)
-- Homepage runs locally via `npm run dev` → http://localhost:3000
-- No database, no auth, no admin UI yet (Milestone 2)
+- Runs locally via `npm run dev` → needs `.env.local` filled in before DB or auth works
 - No server work done yet (Milestones 8–9)
 - No domain name provided yet (Rithynea will supply when ready)
 
 ---
 
 ## What's Blocking
-_Nothing is blocking right now._ Milestone 2 can begin immediately.
+Rithynea needs to create `.env.local` from `.env.example` and fill in the five values (DATABASE_URL, AUTH_SECRET, ADMIN_EMAIL, RESEND_API_KEY, EMAIL_FROM) before the app can connect to the database or send magic-link emails.
 
 _(This section will list any blockers: missing env vars, a decision needed from Rithynea, a tool that isn't set up, etc.)_
 
