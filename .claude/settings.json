@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -Command \"[console]::beep(900,300); Add-Type -AssemblyName System.Windows.Forms; $n = New-Object System.Windows.Forms.NotifyIcon; $n.Icon = [System.Drawing.SystemIcons]::Information; $n.Visible = $true; $n.ShowBalloonTip(5000,'Travel Journal Advisor','Claude needs your attention',[System.Windows.Forms.ToolTipIcon]::Info); Start-Sleep -Milliseconds 500; $n.Dispose()\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NonInteractive -Command \"[console]::beep(600,200)\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

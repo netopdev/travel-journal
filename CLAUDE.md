@@ -104,10 +104,11 @@ Admin (auth-gated): `/admin`, `/admin/posts`, `/admin/posts/new`, `/admin/posts/
 
 ## Tracking rules (dashboard system)
 
-- Update **PROGRESS.md** at the project root every time a milestone starts or finishes, or when the "Where we stand" state changes meaningfully.
-- Append to **DAILY_LOG.md** at the end of every session with a dated entry.
+- Update **PROGRESS.md** at the project root every time a milestone starts or finishes, or when the "Where we stand" state changes meaningfully. Keep the "Overall %" and "Money So Far" sections current.
+- Append to **DAILY_LOG.md** at the end of every session with a dated entry (newest at top). Include session goal, work done, outcome, and what's next.
 - At the start of every new session, read PROGRESS.md first and give a one-paragraph status recap.
 - Every Sunday (or when Rithynea says "weekly check-in"), produce a full status report covering: milestones done, total API cost so far, server health (if deployed), momentum sense, anything drifting.
+- **Notifications:** Claude Code hooks fire a terminal beep + Windows desktop toast whenever Rithynea's attention is needed (approval prompt) or a milestone finishes. Hook scripts live in `.claude/hooks/`.
 
 ## When you don't know something
 
